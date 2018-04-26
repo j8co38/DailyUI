@@ -11,13 +11,17 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           postLoaders: {
-            js: 'babel-loader?presets=es2015',
+            js: 'babel-loader?presets=es2015'
           },
         },
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader?presets=es2015',
+        loader: 'babel-loader?presets=es2015'
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader'
       },
       {
         test: /\.css$/,
