@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <p>Hello, World!</p>
+  <div class="app">
+    <div class="">
+      <p>app</p>
+      <card></card>
+    </div>
   </div>
 </template>
-<style src="../style/style.css" scoped></style>
+<style src="../style/app.css" scoped></style>
+<script lang="ts" src="./app.ts"></script>
