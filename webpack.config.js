@@ -1,5 +1,6 @@
 module.exports = {
   entry: './src/index.ts',
+  devtool: 'source-map',
   output: {
     filename: 'bundle.js',
     path: `${__dirname}/dest`,
@@ -13,6 +14,13 @@ module.exports = {
           postLoaders: {
             js: 'babel-loader?presets=es2015'
           },
+          postcss: [
+            require('postcss-cssnext'),
+            require('postcss-calc'),
+            require('postcss-color-function'),
+            require('postcss-import'),
+            require('postcss-nested')
+          ]
         },
       },
       {
@@ -25,12 +33,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader',
-        options: {
-          plugins: [
-            require('autoprefixer')({grid: true})
-          ]
-        },
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: true,
+              minimize: true,
+              importLoaders: 1
+            },
+          }
+        ]
       },
     ]
   },
