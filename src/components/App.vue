@@ -1,10 +1,19 @@
 <template>
   <div class="app">
-    <div class="">
-      <p>app</p>
-      <card></card>
-    </div>
+    <card
+      :name="displayData.name"
+    ></card>
+    <form-area
+    	:on-change="handleOnChange"
+    	:on-click="handleButtonClick"
+    >
+  	</form-area>
   </div>
 </template>
-<style src="../style/app.css" scoped></style>
 <script lang="ts" src="./app.ts"></script>
+<style lang="postcss" scoped>
+  .app {
+    width: 90%;
+    margin: 0 auto;
+  }
+</style>
