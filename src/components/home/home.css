@@ -31,6 +31,12 @@
     margin: 40px auto 0 auto;
   }
 
+  & .bg {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+  }
+
   & .post {
     position: relative;
     display: block;
@@ -46,7 +52,6 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      overflow: hidden;
 
       & img {
         width: 100%;

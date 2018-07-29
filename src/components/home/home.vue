@@ -6,29 +6,34 @@
         <p class="header--author">created by <a href="https://twitter.com/y8vj3" target="_blank">@y8vj3</a></p>
       </div>
     </header>
-    <div class="posts">
-      <template v-for="(post, index) in posts">
-        <a
-          :key="`post-${index}`"
-          :href="`/#/article/${post.id}`"
-          class="post"
-        >
-          <template v-if="post._embedded['wp:featuredmedia']">
-            <div class="post--image">
-              <img
-                :src="post._embedded['wp:featuredmedia'][0].source_url"
-                :key="`image-${index}`"
-              >
+
+    <transition appear>
+      <div class="posts">
+        <template v-for="(post, index) in posts">
+          <a
+            :key="`post-${index}`"
+            :href="`/article/${post.id}`"
+            class="post"
+          >
+            <template v-if="post._embedded['wp:featuredmedia']">
+              <div class="post--image">
+                <img
+                  :src="post._embedded['wp:featuredmedia'][0].source_url"
+                  :key="`image-${index}`"
+                >
+              </div>
+            </template>
+            <div class="post--overlay">
+              <p class="post--title">{{ post.title.rendered }}</p>
             </div>
-          </template>
-          <div class="post--overlay">
-            <p class="post--title">{{ post.title.rendered }}</p>
-          </div>
-        </a>
-      </template>
-    </div>
+          </a>
+        </template>
+      </div>
+    </transition>
 
     <footer-section></footer-section>
+
+    <loading v-if="isLoading"></loading>
   </div>
 </template>
 <script lang="ts" src="./home.ts"></script>

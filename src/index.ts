@@ -8,7 +8,11 @@ Vue.use(VueRouter);
 import routes from "./route/route";
 
 const router = new VueRouter({
-  routes: routes
+  mode: 'history',
+  routes: routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 });
 
 new Vue({

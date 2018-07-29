@@ -3,23 +3,30 @@ import Component from "vue-class-component";
 
 import axios from "axios";
 
+import Loading from "../loading/loading";
 import FooterSection from "../footer/footer";
 
 
 @Component({
   components: {
+    Loading,
     FooterSection
   }
 })
 export default class Home extends Vue {
 
   protected posts: object;
-
+  protected isLoading: boolean;
 
   public data() {
     return {
-      posts: this.posts
+      posts: this.posts,
+      isLoading: this.isLoading
     }
+  }
+
+  public created() {
+    this.isLoading = true;
   }
 
   public async mounted() {
@@ -28,7 +35,7 @@ export default class Home extends Vue {
     const res = await axios.get(url);
     this.posts = res.data;
 
-    console.log(this.posts);
+    this.isLoading = false;
   }
 
 }
