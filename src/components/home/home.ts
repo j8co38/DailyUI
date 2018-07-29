@@ -3,8 +3,14 @@ import Component from "vue-class-component";
 
 import axios from "axios";
 
+import FooterSection from "../footer/footer";
 
-@Component
+
+@Component({
+  components: {
+    FooterSection
+  }
+})
 export default class Home extends Vue {
 
   protected posts: object;

@@ -1,6 +1,6 @@
 <template>
   <div class="article">
-    <p>{{ post }}</p>
+    <p v-html="post">{{ post }}</p>
   </div>
 </template>
 <script lang="ts" src="./article.ts"></script>

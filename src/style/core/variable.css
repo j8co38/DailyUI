@@ -1,0 +1,11 @@
+:root {
+  /* font-family */
+  --font-family-en: 'Open Sans';
+  --font-family-ja: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック';
+  --font-family: var(--font-family-en), var(--font-family-ja), sans-serif, 'Arial', 'Verdana';
+
+  /* color */
+  --color-black: #111111;
+  --color-blue: #0d3ef5;
+  --color-blue-dark: #0027b5;
+}
