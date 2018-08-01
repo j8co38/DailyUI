@@ -10,9 +10,9 @@
     <transition appear>
       <div class="posts">
         <template v-for="(post, index) in posts">
-          <a
+          <router-link
             :key="`post-${index}`"
-            :href="`/article/${post.id}`"
+            :to="{ name: 'article', params: { id: post.id }}"
             class="post"
           >
             <template v-if="post._embedded['wp:featuredmedia']">
@@ -26,7 +26,7 @@
             <div class="post--overlay">
               <p class="post--title">{{ post.title.rendered }}</p>
             </div>
-          </a>
+          </router-link>
         </template>
       </div>
     </transition>

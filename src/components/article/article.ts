@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
+import { Watch } from "vue-property-decorator";
+
 import axios from "axios";
 import { Route } from "vue-router";
 
@@ -16,7 +18,9 @@ import FooterSection from "../footer/footer";
 })
 export default class Article extends Vue {
 
-  protected post: object;
+  protected post: {
+    id: number
+  };
   protected isLoading: boolean;
 
   public data() {
@@ -31,12 +35,18 @@ export default class Article extends Vue {
   }
 
   public async mounted() {
-    const url = `http://dailyui.burita.me/wp/wp-json/wp/v2/posts/${this.$route.params.id}`;
+    const url = `https://dailyui.burita.me/wp/wp-json/wp/v2/posts/${this.$route.params.id}`;
 
     const res = await axios.get(url);
     this.post = res.data.content.rendered;
 
     this.isLoading = false;
   }
+
+  @Watch("$route")
+  protected watchRoute() {
+    this.$router.push(`/article/${this.post.id}`);
+  }
+
 
 }
