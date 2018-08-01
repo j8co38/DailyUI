@@ -59,6 +59,10 @@
     color: var(--color-gray);
   }
 
+  &--content >>> .wp-video {
+    width: 100% !important;
+  }
+
   &--navigation {
     font-weight: bold;
     width: 80%;
