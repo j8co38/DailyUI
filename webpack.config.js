@@ -55,6 +55,6 @@ module.exports = {
     },
   },
   devServer: {
-      contentBase: 'dest',
+    contentBase: 'dest'
   },
 }
