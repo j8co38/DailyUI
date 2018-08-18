@@ -64,6 +64,7 @@
   }
 
   &--navigation {
+    display: flex;
     font-weight: bold;
     width: 80%;
     max-width: 800px;
@@ -72,19 +73,37 @@
     & a {
       display: block;
       text-align: center;
-      padding: 8px 0;
+      padding: 12px 0;
       color: var(--color-blue);
       border: 2px solid var(--color-blue);
       transition: all .3s;
-
-      & i {
-        margin-right: 4px;
-      }
 
       &:hover {
         color: white;
         background-color: var(--color-blue);
       }
+    }
+
+    & .prev,
+    & .next {
+      flex: 1;
+    }
+
+    & .prev {
+      & i {
+        margin-right: 4px;
+      }
+    }
+
+    & .next {
+      & i {
+        margin-left: 4px;
+      }
+    }
+
+    & .top {
+      flex: 2;
+      margin: 0 16px;
     }
   }
 

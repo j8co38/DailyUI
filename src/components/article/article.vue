@@ -13,8 +13,19 @@
 
           <div class="article--navigation">
             <router-link
+              v-if="Number(slug) > 1"
+              :to="`/article/${prevPost}`"
+              class="prev"
+            ><i class="fas fa-arrow-alt-circle-left"></i>prev</router-link>
+            <router-link
               to="/"
-            ><i class="fas fa-arrow-alt-circle-left"></i>TOP</router-link>
+              class="top"
+            ><i class="fas fa-th"></i></router-link>
+            <router-link
+              v-if="!isLatest"
+              :to="`/article/${nextPost}`"
+              class="next"
+            >next<i class="fas fa-arrow-alt-circle-right"></i></router-link>
           </div>
         </div>
       </transition>

@@ -12,7 +12,7 @@
         <template v-for="(post, index) in posts">
           <router-link
             :key="`post-${index}`"
-            :to="{ name: 'article', params: { id: post.id }}"
+            :to="{ name: 'article', params: { slug: post.slug }}"
             class="post"
           >
             <template v-if="post._embedded['wp:featuredmedia']">
