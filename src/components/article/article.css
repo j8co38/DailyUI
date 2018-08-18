@@ -71,7 +71,9 @@
     margin: 40px auto 0 auto;
 
     & a {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 12px 0;
       color: var(--color-blue);
