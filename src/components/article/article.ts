@@ -59,6 +59,7 @@ export default class Article extends Vue {
   @Watch("$route")
   protected async watchRoute() {
     this.isLoading = true;
+    this.isLatest = false;
 
     const url = `https://dailyui.burita.me/wp/wp-json/wp/v2/posts?slug=${this.$route.params.slug}`;
 

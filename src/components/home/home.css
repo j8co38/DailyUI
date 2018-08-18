@@ -41,7 +41,7 @@
         opacity: 0;
         top: -10px;
         transition: opacity .3s ease-in-out, top .3s ease-out;
-        transition-delay: 1.5s;
+        transition-delay: 1.2s;
 
         &.active {
           opacity: 1;
@@ -68,7 +68,7 @@
         width: 0;
         height: 20px;
         background: linear-gradient(45deg, #f0a635, #ef187c);
-        transition: width .8s 1s ease-in-out;
+        transition: width .8s .8s ease-in-out;
       }
     }
 
