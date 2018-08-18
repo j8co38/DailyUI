@@ -69,6 +69,7 @@
         width: 0;
         height: 20px;
         background: linear-gradient(45deg, #f0a635, #ef187c);
+        border-radius: 10px 0 0 10px;
         transition: width .8s .8s ease-in-out;
       }
     }
