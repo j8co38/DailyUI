@@ -12,6 +12,7 @@
       text-align: center;
       font-size: 72px;
       color: var(--color-blue-dark);
+      margin-left: -.15em;
     }
 
     & .header--progress {
@@ -162,6 +163,10 @@
 
         &_wrap {
           width: 80%;
+        }
+
+        &_current {
+          height: 16px;
         }
       }
     }
