@@ -15,7 +15,7 @@ import FooterSection from "../footer/footer";
 })
 export default class Home extends Vue {
 
-  protected posts: object;
+  protected posts: object[];
   protected isLoading: boolean;
 
   public data() {
@@ -27,6 +27,7 @@ export default class Home extends Vue {
 
   public created() {
     this.isLoading = true;
+    this.posts = [];
   }
 
   public async mounted() {

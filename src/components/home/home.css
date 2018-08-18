@@ -1,5 +1,6 @@
 .home {
   & header {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,8 +9,67 @@
     background-color: var(--color-blue);
 
     & h1 {
+      text-align: center;
       font-size: 72px;
       color: var(--color-blue-dark);
+    }
+
+    & .header--progress {
+      position: relative;
+      width: 400px;
+      height: 20px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+
+      &_wrap {
+        margin: 40px auto 16px auto;
+        position: relative;
+      }
+
+      &_balloon {
+        position: absolute;
+        width: 44px;
+        font-size: 12px;
+        padding: 6px 0;
+        background: #ef187c;
+        border-radius: 2px;
+        line-height: 1;
+        text-align: center;
+        color: white;
+        opacity: 0;
+        top: -10px;
+        transition: opacity .3s ease-in-out, top .3s ease-out;
+        transition-delay: 1.5s;
+
+        &.active {
+          opacity: 1;
+          top: -32px;
+        }
+
+        &::after {
+          position: absolute;
+          bottom: -8px;
+          left: calc(50% - 4px);
+          display: block;
+          width: 0;
+          height: 0;
+          content: '';
+          border: 4px solid transparent;
+          border-top: 4px solid #ef187c;
+        }
+      }
+
+      &_current {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 20px;
+        background: linear-gradient(45deg, #f0a635, #ef187c);
+        transition: width .8s 1s ease-in-out;
+      }
     }
 
     & .header--author {
@@ -86,8 +146,23 @@
 
   @media (max-width: 767px) {
     & header {
+      height: 64vmin;
+
+      & .header--content {
+        width: 100vw;
+      }
+
       & h1 {
         font-size: 12vmin;
+      }
+
+      & .header--progress {
+        width: 100%;
+        height: 16px;
+
+        &_wrap {
+          width: 80%;
+        }
       }
     }
 
