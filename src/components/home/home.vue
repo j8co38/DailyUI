@@ -28,10 +28,10 @@
             :to="{ name: 'article', params: { slug: post.slug }}"
             class="post"
           >
-            <template v-if="post._embedded['wp:featuredmedia']">
+            <template v-if="post.featured_image.src">
               <div class="post--image">
                 <img
-                  :src="post._embedded['wp:featuredmedia'][0].source_url"
+                  :src="post.featured_image.src"
                   :key="`image-${index}`"
                 >
               </div>
