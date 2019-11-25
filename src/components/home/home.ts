@@ -31,7 +31,7 @@ export default class Home extends Vue {
   }
 
   public async mounted() {
-    const url = "https://dailyui.burita.me/wp/wp-json/wp/v2/posts?_embed";
+    const url = "https://dailyui.burita.me/wp/wp-json/wp/v2/posts?_embed?per_page=100";
 
     const res = await axios.get(url);
     this.posts = res.data;
